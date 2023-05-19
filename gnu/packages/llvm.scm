@@ -211,12 +211,7 @@ given PATCHES.  When TOOLS-EXTRA is given, it must point to the
 
              ;; Find libgcc_s, crtbegin.o, and crtend.o.
              (string-append "-DGCC_INSTALL_PREFIX="
-                            (assoc-ref %build-inputs "gcc-lib"))
-
-             ;; Use a sane default include directory.
-             (string-append "-DC_INCLUDE_DIRS="
-                            (assoc-ref %build-inputs "libc")
-                            "/include"))
+                            (assoc-ref %build-inputs "gcc-lib")))
 
        ;; Don't use '-g' during the build to save space.
        #:build-type "Release"
