@@ -469,7 +469,7 @@ code analysis tools.")
               "znver3")
             '())))))
 
-(define (make-clang-toolchain clang)
+(define-public (make-clang-toolchain clang)
   (package
     (name (string-append (package-name clang) "-toolchain"))
     (version (package-version clang))
